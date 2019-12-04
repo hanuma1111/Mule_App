@@ -1,0 +1,34 @@
+#%RAML 1.0
+types:
+  Result:
+    description: Success
+    default: Default
+    type: string
+title: First_API_Hanuma
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/9a5daac5-befc-4eaa-a5cf-6fec6c0e34e6/Api/V1
+mediaType:
+  - application/json
+  - application/xml
+version: 1.0
+protocols:
+  - HTTP
+/QueryAccount:
+  get:
+    queryParameters:
+      Name:
+        example: Example
+        type: string
+        required: true
+    responses:
+      "200":
+        body:
+          application/json:
+            properties:
+              Status: string
+            example:
+              {
+                "Status": "Success"
+              }
+
+
+
